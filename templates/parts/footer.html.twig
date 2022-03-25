@@ -1,0 +1,128 @@
+{% block body %}
+<!-- FOOTER -->
+<footer id="footer">
+    <!-- top footer -->
+    <section class="lightgrey py-2">
+        <!-- container -->
+        <hr>
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer d-flex justify-content-between">
+                        <a href="#">
+                            <img class="align-items-start" src="images/logo_resize_1.png" width="75px" height="75px" alt="logo la Nîmes'alerie"/>
+                        </a>
+
+                        <ul id="contact-details" class="footer-links">
+                            <li>30, rue des arènes<br />30 000 Nîmes</li>
+                            <li>04 01 45 34 30</li>
+                            <br />
+                            <li>lundi : 10h-19h</li>
+                            <li>mardi au samedi : 9h-19h</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer">
+                        <h3 class="footer-title">Catégories</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Chiens</a></li>
+                            <li><a href="#">Chats</a></li>
+                            <li><a href="#">Rongeurs</a></li>
+                            <li><a href="#">Nos produits</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="footer">
+                        <h3 class="footer-title">La Nîmes'Alerie</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Nos engagements</a></li>
+                            <li><a href="#">Nos services</a></li>
+                            <li><a href="{{ path('contact') }}">Contactez-nous</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="footer">
+                        <h3 class="footer-title">Informations</h3>
+                        <ul class="footer-links">
+                            <li><a href="{{ path('terms') }}">Mentions Légales</a></li>
+                            <li><a href="{{ path('conditions') }}">CGV</a></li>
+                            <li><a href="#">Données personnelles</a></li>
+                            <li><a href="#">Plan du site</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </section>
+    <!-- /top footer -->
+
+    <!-- bottom footer -->
+    <section id="bottom-footer" class="lightblue">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                    <ul class="footer-payments">
+                        <li>
+                            <a href="#"><i class="fab fa-cc-visa"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-cc-paypal"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-cc-mastercard"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-cc-amex"></i></a>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <ul class="footer-social d-flex justify-content-center">
+
+                        <li>
+                            <a href="https://fr-fr.facebook.com/"
+                            ><i class="fab fa-facebook-f"></i
+                                ></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/?hl=fr"
+                            ><i class="fab fa-instagram "></i
+                                ></a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.fr/"
+                            ><i class="fab fa-pinterest-p "></i
+                                ></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 d-flex justify-content-end">
+              <span class="copyright">
+                &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                La Nîmes'alerie |
+                Tous droits réservés. <br>Made with
+                <i class="fa fa-heart-o" aria-hidden="true"></i> by Kheira SENOUCI</a>
+
+              </span>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+{% endblock %}

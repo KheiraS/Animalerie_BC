@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Administration {% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"/>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('stylesheets/css/bootstrap.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('stylesheets/fontawesome/css/all.css') }}"/>
+            <!-- Bootstrap CSS
+            <link rel="stylesheet" href="css/bootstrap.min.css" />
+            ---->
+            <link rel="stylesheet" href="{{ asset('stylesheets/style.css') }}"/>
+            <!--google font-->
+            <link rel="stylesheet" href="{{ asset('stylesheets/font/font-google.css') }}"/>
+            <!--google material icon-->
+            <link rel="stylesheet" href="{{ asset('stylesheets/icon.css') }}"/>
+            <!-- SLIDER REVOLUTION 4.x CSS SETTINGS
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />-->
+
+        {% endblock %}
+
+    </head>
+
+    <body>
+        <div class="wrapper"><!-- DIV WRAPPER -->
+            <div class="body-overlay"></div>
+                {% include 'admin/parts/sideBar.html.twig' %}
+            <!-- PAGE CONTENT -->
+            <div id="content">
+                {% include 'admin/parts/topbar.html.twig' %}
+                <!-- BEGIN MAIN CONTENT -->
+                <div class="main-content">
+
+                {% block body %}{% endblock %}
+
+                </div><!--END MAIN CONTENT-->
+            </div><!--END DIV CONTENT-->
+
+        </div> <!-- END DIV WRAPPER -->
+
+        {% block javascripts %}
+
+            <script src="{{ asset('script/js/bootstrap.bundle.js') }}"></script>
+            <script src="{{ asset('stylesheets/fontawesome/js/all.js') }}"></script>
+
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="{{ asset('script/admin/jquery-3.3.1.slim.min.js') }}"></script>
+            <script src="{{ asset('script/admin/popper.min.js') }}"></script>
+            <script src="{{ asset ('script/admin/bootstrap.min.js') }}"></script>
+            <script src="{{ asset ('script/admin/jquery-3.3.1.min.js') }}"></script>
+            <script src="{{ asset('script/admin/script.js') }}"></script>
+        {% endblock %}
+
+    </body>
+
+
+</html>

@@ -1,0 +1,116 @@
+<!-- Sidebar  -->
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <img src="img/logo-anim.png" class="img-fluid" />
+        <h3></h3>
+    </div>
+    <ul class="list-unstyled components">
+        <li class="{% if app.request.get('_route') == 'admin' %}active{% endif %} ">
+            <a href="{{ path('admin') }}" class="dashboard"><i class="material-icons">space_dashboard</i><span>Dashboard</span></a>
+        </li>
+
+        <div class="small-screen navbar-display">
+            <li class="dropdown d-lg-none d-md-block d-xl-none d-sm-block">
+                <a href="#homeSubmenu0" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="material-icons">notifications</i><span> 4 notification</span>
+                </a>
+                <ul class="collapse list-unstyled menu" id="homeSubmenu0">
+                    <li>
+                        <a href="#">You have 5 new messages</a>
+                    </li>
+                    <li>
+                        <a href="#">You're now friend with Mike</a>
+                    </li>
+                    <li>
+                        <a href="#">Wish Mary on her birthday!</a>
+                    </li>
+                    <li>
+                        <a href="#">5 warnings in Server Console</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                <a href="#"
+                ><i class="material-icons">person</i><span>Hello</span></a
+                >
+            </li>
+
+            <li class="d-lg-none d-md-block d-xl-none d-sm-block">
+                <a href="#"
+                ><i class="material-icons">logout</i><span>logout</span></a
+                >
+            </li>
+        </div>
+        <!---------------- CATEGORY MENU ---------------->
+        <li class="dropdown">
+            <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">sort</i><span>Catégories</span>
+            </a>
+            <ul class="collapse list-unstyled menu" id="homeSubmenu1">
+                <li>
+                    <a href="#">Liste</a>
+                </li>
+                <li>
+                    <a href="#">Ajouter</a>
+                </li>
+            </ul>
+        </li>
+        <!---------------- CLIENT MENU ---------------->
+        <li class="dropdown">
+            <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">groups</i><span>Clients</span>
+            </a>
+            <ul class="collapse list-unstyled menu" id="pageSubmenu2">
+                <li>
+                    <a href="#">Liste</a>
+                </li>
+                <li>
+                    <a  href="#">Ajouter</a>
+                </li>
+            </ul>
+        </li>
+        <!---------------- ORDER MENU ---------------->
+        <li class="dropdown">
+            <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">fact_check</i>
+                <span>Commandes</span>
+            </a>
+            <ul class="collapse list-unstyled menu" id="pageSubmenu3">
+                <li>
+                    <a href="#">Liste</a>
+                </li>
+                <li>
+                    <a href="#">Ajouter</a>
+                </li>
+                <li>
+                    <a href="#">Editer</a>
+                </li>
+            </ul>
+        </li>
+        <!---------------- PRODUCT MENU ---------------->
+        <li class="dropdown {% if app.request.get('_route') starts with 'admin_product' %}active{% endif %}">
+            <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">inventory_2</i><span>Produits</span>
+            </a>
+            <ul class="collapse list-unstyled menu" id="pageSubmenu4">
+                <li>
+                    <a href="{{ path('admin_product_index') }}">Liste des produits</a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_product_new') }}">Ajouter un produit</a>
+                </li>
+            </ul>
+        </li>
+        <!---------------- LINK TO WEBSITE ---------------->
+        <li>
+            <a href="{{ path('default') }}">
+
+                <i class="material-icons custom">pets</i
+                ><span>La Nîmes'alerie</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!--END NAV SIDEBAR-->

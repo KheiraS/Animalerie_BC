@@ -1,0 +1,207 @@
+
+<section id="topheader" class="py-3">
+    <!-- Background Black -->
+    <div class="container">
+       {# <div class="row align-items-center">
+            <!-- Adresse -->
+
+            <div id="test" class="col-lg-3 col-sm-6">
+                <i class="text-white align-middle fas fa-map-marker-alt"></i>
+                <p>30, rue des arènes - 30 000 Nîmes</p>
+            </div>
+            <!-- Horaires : affichage récupère les horaires d'ouverture journaliers -->
+            <div class="col-lg-3 col-sm-6">
+                <i class="text-white align-middle far fa-clock "></i>
+                <p>Horaire d'ouverture du jour</p>
+            </div>
+            <!-- Réseaux Sociaux  -->
+            <div class="col-lg-3 col-sm-6 d-flex justify-content-end">
+                <a href="https://fr-fr.facebook.com/"><i class="text-white fab fa-facebook "></i></a>
+                <a href="https://www.instagram.com/?hl=fr"><i class="text-white fab fa-instagram "></i></a>
+                <a href="https://www.pinterest.fr/"><i class="text-white fab fa-pinterest "></i></a>
+            </div>
+            <!-- Téléphone  -->
+            <div class="col-lg-3 col-sm-6 d-flex justify-content-center">
+                <i class="text-white align-middle fas fa-phone-alt"></i>
+                <p class="d-flex justify-content-end">04 01 45 34 30</p>
+            </div>
+        </div>#}
+        <ul class="header-links pull-left">
+            <li><a href="#"><i class="fa fa-map-marker"></i> 30, rue des arènes - 30 000 Nîmes</a></li>
+            <li><a href="#"><i class="fa fa-clock"></i>Horaire d'ouverture du jour</a></li>
+        </ul>
+        <ul class="header-links pull-right">
+            <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+            <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+        </ul>
+    </div>
+</section>
+<!--------------------------------------------------- SECTION MAIN HEADER (LOGO,SEARCHBOX,ACCOUNT & CART) AND NAVIGATION --------------------------------------------------->
+<section id="header" class="lightgrey sticky-top">
+    <!--  MAIN HEADER -->
+    <header>
+        <div class="container">
+            <div class="row py-3">
+                <!-- LOGO -->
+                <div class="col-lg-3 col-sm-6 my-2">
+                    <a href="{{ path('default') }}"><img src="{{ asset ('/images/logo.png')}}" alt="logo la Nîmes'alerie"/></a>
+                </div>
+                <!-- SEARCHBOX, ACCOUNT & CART -->
+                <div class="col-lg-9 col-sm-6 align-items-center">
+                     <div class="d-flex justify-content-end">
+                         <!-- icon searchbox -->
+                        <div class="search-box">
+                            <button class="btn-search"><i class="fas fa-search"></i></button>
+                            <input type="text" class="input-search" placeholder="Rechercher...">
+                        </div>
+                        <!-- icon Account -->
+                        <div class="my-3">
+                            <a href="#" class="header-icon"> <!-- Link to login or register-->
+                                <i class="fas fa-user fa-lg d-flex justify-content-center mx-5"></i>
+                                <p class="icon text-center">Mon compte</p>
+                            </a>
+                        </div>
+                        <!-- icon cart -->
+                        <div class="my-3">
+                            <a href="{{ path('cart_display') }}" class="header-icon">
+                                <i class="fas fa-shopping-basket fa-lg d-flex justify-content-center mx-5"></i>
+                                <p class="icon text-center">Mon Panier</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--  NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="main_nav">
+                <ul class="navbar-nav justify-content-between w-75">
+                    <!-- Icon Homepage -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('default') }}"><i class="fas fa-home active "></i></a>
+                    </li>
+                    <!-- Rubrique Animaux - BOUTIQUE -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Animaux</a>
+                        <ul class="dropdown-menu">
+                            <li class="has-megasubmenu">
+                                <a class="dropdown-item" href="#"> CHIENS &raquo; </a>
+                                <div class="megasubmenu dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 class="title">Nourriture</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Croquettes</a></li>
+                                                <li><a href="#">Friandises</a></li>
+                                                <li><a href="#">Pâtées</a></li>
+                                                <li><a href="#">Compléments alimentaires</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-6">
+                                            <h6 class="title">Accessoires</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Jouets</a></li>
+                                                <li><a href="#">Hygiène & Soins</a></li>
+                                                <li><a href="#">Gamelles</a></li>
+                                                <li><a href="#">Panier & couchage</a></li>
+                                                <li><a href="#">Vêtements</a></li>
+                                                <li><a href="#">Sellerie & transport</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- end col-3 -->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </li>
+                            <li class="has-megasubmenu">
+                                <a class="dropdown-item" href="#"> CHATS &raquo; </a>
+                                <div class="megasubmenu dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 class="title">Nourriture</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Croquettes</a></li>
+                                                <li><a href="#">Friandises</a></li>
+                                                <li><a href="#">Pâtées</a></li>
+                                                <li><a href="#">Compléments alimentaires</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-6">
+                                            <h6 class="title">Accessoires</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Jouets</a></li>
+                                                <li><a href="#">Hygiène & Soins</a></li>
+                                                <li><a href="#">Gamelles</a></li>
+                                                <li><a href="#">Panier & couchage</a></li>
+                                                <li><a href="#">Vêtements</a></li>
+                                                <li><a href="#">Sellerie & transport</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- end col-3 -->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </li>
+
+                            <li class="has-megasubmenu">
+                                <a class="dropdown-item" href="#"> RONGEURS &raquo; </a>
+                                <div class="megasubmenu dropdown-menu">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <h6 class="title">Nourriture</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Alimentation</a></li>
+                                                <li><a href="#">Foin</a></li>
+                                                <li><a href="#">Friandises</a></li>
+                                                <li><a href="#">Compléments alimentaires</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- end col-3 -->
+                                        <div class="col-6">
+                                            <h6 class="title">Accessoires</h6>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#">Cage</a></li>
+                                                <li><a href="#">Litière & Hygiène</a></li>
+                                                <li><a href="#">Jouets</a></li>
+                                                <li><a href="#">Transport</a></li>
+                                                <li><a href="#">Mangeoire & Biberon</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- end col-3 -->
+                                    </div>
+                                    <!-- end row -->
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Rubrique Marques - BOUTIQUE -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Marques</a>
+                    </li>
+                    <!-- Rubrique SERVICES -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Chez La Nîmes'alerie </a>
+                    </li>
+
+                    <!-- Rubrique CONTACT redirige sur page avec form et coordonnées -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                    </li>
+                    <!-- Rubrique Promos - BOUTIQUE -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">PROMOS</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- navbar-collapse.// -->
+        </div>
+        <!-- container-fluid.// -->
+    </nav>
+</section>

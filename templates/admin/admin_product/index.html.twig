@@ -1,0 +1,57 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block title %}
+    {{ parent()}} - Liste des produits
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('stylesheets/admin/datatables.min.css') }}"/>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script rel="script" src="{{ asset('script/admin/datatables.min.js') }}"></script>
+    <script rel="script" src="{{ asset('script/admin/init-datatable.js') }}"></script>
+{% endblock %}
+
+{% block body %}
+    <h1>Product index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Rate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for product in products %}
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td><img class="img-thumbnail" src="{{ product.image }}"/></td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.rate }}</td>
+                <td>
+                    <a href="{{ path('admin_product_show', {'id': product.id}) }}">show</a>
+                    <a href="{{ path('admin_product_edit', {'id': product.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_product_new') }}">Create new</a>
+
+{% endblock %}

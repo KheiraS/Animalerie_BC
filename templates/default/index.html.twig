@@ -1,0 +1,213 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur la Nîmes'Alerie{% endblock %}
+
+
+{% block body %}
+    <!--------------------------------------------------- SECTION SLIDER --------------------------------------------------->
+    <section>
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/dog_slider.jpg" width="1920" height="400" class="d-block w-100 img-fluid" alt="Photo branche"/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="text-uppercase">Univers Chiens</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Doloremque ullam, suscipit laborum beatae impedit unde rerum
+                            perferendis voluptas sint porro.
+                        </p>
+                        <a href="#" class="custom">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/cat_slider.jpg" width="1920" height="400" class="d-block w-100 img-fluid" alt="Photo branche"/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="text-uppercase">Univers Chats</h2>
+                        <p>Suscipit laborum beatae impedit unde rerum perferendis voluptas sint porro</p>
+                        <a href="#" class="custom">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/astro_cat.jpg" width="1920" height="400" class="d-block w-100 img-fluid" alt="Photo vétérinaire"/>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="text-uppercase">Voyage dans l'espace</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque ullam,voluptas sint.</p>
+                        <a href="#" class="custom">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section><!-- END OF SECTION SLIDER-->
+
+    <main>
+        <!--------------------------------------------------- SECTION ABOUT US --------------------------------------------------->
+        <section class="parallax text-white py-5">
+            <div class="container">
+                <h2 class="text-center">Bienvenue dans l’univers la Nîmes’alerie</h2><br>
+                <p class="paragraphe text-justify">
+                    Lorem ipsum dolor sit amet. Sed veniam dolorem ut illum praesentium
+                    sit vero quia. Qui velit alias et enim exercitationem ut voluptatum
+                    nihil vel cumque neque. Id itaque officiis quo aliquam iure ad
+                    voluptas laborum qui voluptate atque et culpa similique vel voluptas
+                    dolores. Vel veniam distinctio qui dicta aliquid id consequatur
+                    blanditiis et tempore sequi et doloremque voluptatem! Qui
+                    consequatur mollitia quo optio earum est temporibus ipsam ut quidem
+                    Quis in velit facilis qui voluptatibus consequuntur. Eum quidem
+                    laudantium id nihil consequatur ea beatae asperiores ex dolorum
+                    consequatur et voluptas corrupti et neque cumque. In accusamus
+                    accusantium et molestias laborum sed deleniti sequi aut quod
+                    placeat.Ut enim ad minim veniam, quis nostrum exercitationem ullam
+                    corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.
+                    Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident,
+                    sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <br>
+                <a href="#" class="btn btn-white mx-auto">En savoir plus</a><!-- Link to CHEZ LA NIMES'ALERIE -->
+            </div>
+        </section><!--  END OF SECTION ABOUT US-->
+
+
+        <!-- TEST -->
+        <!-- END OF TEST -->
+
+        <!--------------------------------------------------- SECTION PRODUCTS GALLERY --------------------------------------------------->
+        <section class="lightgrey py-5">
+            <div class="container"><!-- container -->
+                <h2 class="text-center">Nos produits stars</h2><br>
+                <div class="row"><!-- row -->
+                    <!-- product 1 -->
+                    {% for product in products %}
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <div class="card shadow p-3 mb-5 bg-white rounded">
+                            <div class="text-center">
+                                <img src="{{ product.image }}" class="img-fluid" width="250" />
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text"><small class="text-muted">{{ product.description|u.truncate(30,'...') }}</small></p>
+                                <p class="card-text">{{ product.price }} €</p>
+                            </div>
+                          {#  <div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="category">{{ product.name }}</span>
+                                    <span class="description">{{ product.description|u.truncate(30,'...') }}</span>
+                                </div>
+                                <p class="price">{{ product.price }}</p>
+                            </div>#}
+                            <div class="content">
+                                    <ul>
+                                        <li><a href="{{ path('cart_add', {'id':product.id}) }}"><i class="fas fa-shopping-basket"></i>Ajouter au panier</a></li>
+                                        <li><a href="#"><i class="fas fa-plus"></i>Détail</a></li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div><!-- End of row -->
+
+            </div><!-- End of container -->
+        </section><!-- END OF SECTION PRODUCTS GALLERY -->
+
+
+
+
+
+
+        <!--------------------------------------------------- SECTION SERVICES --------------------------------------------------->
+        <section class="darkblue text-white py-5">
+
+            <div class="container text-center">
+                <div class="titleImg">
+                    <img src="images/fusee.png" alt="" width="100px" height="100px">
+                    <h2 class="title-center">Explorez notre univers</h2>
+                </div><br>
+                <p>
+                    Lorem ipsum dolor sit amet. Sed veniam dolorem ut illum praesentium
+                    sit vero quia. Qui velit alias et enim exercitationem ut voluptatum
+                    nihil vel cumque neque. Id itaque officiis quo aliquam iure ad
+                    voluptas laborum qui voluptate atque et culpa similique vel voluptas
+                    dolores. Vel veniam distinctio qui dicta aliquid id consequatur
+                    blanditiis et tempore sequi et doloremque voluptatem!
+                </p>
+                <div class="row">
+                    <!-- align 12 colonnes -->
+                    <div class="col-lg-4">
+                        <div class="border">
+                            <img src="images/space_travel_small.jpg" alt="Hamster astronaute" width="440" height="330" class="img-fluid"/>
+                            Ici service 1 (texte)
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="border">
+                            <img src="images/loyalty_small.jpg" alt="Coeur main et pattes" width="440" height="330" class="img-fluid"/>
+                            Ici service 2 (texte)
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="border">
+                            <img src="images/massage_small.jpg" alt="Massage chat" width="440" height="330" class="img-fluid"/>
+                            Ici service 3 (texte)
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-white">Découvrez nos autres univers</a><!-- LINK TO CHEZ LA NÎMES'ALERIE -->
+            </div>
+        </section><!-- END OF SECTION SERVICES -->
+
+        <!-- REVIEWS SLIDER-->
+
+        <!-- END OF REVIEWS SLIDER-->
+
+
+        <!--------------------------------------------------- SECTION REINSURANCE --------------------------------------------------->
+        <section class="lightgrey py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- align 12 colonnes -->
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="reinsurance d-flex justify-content-start">
+                            <i class="fas fa-shipping-fast fa-3x mx-3"></i>
+                            <div>
+                                <h3>Livraison rapide</h3>
+                                <p>Vos colis livrés dès le lendemain !</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="reinsurance d-flex justify-content-center">
+                            <i class="fas fa-gift fa-3x mx-3"></i>
+                            <div>
+                                <h3>Remboursement gratuit</h3>
+                                <p>Notre équipe est à votre disposition</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="reinsurance d-flex justify-content-end">
+                            <i class="fas fa-lock fa-3x mx-3"></i>
+                            <div>
+                                <h3>Paiement sécurisé</h3>
+                                <p>Pour tous types de paiement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section><!-- END OF SECTION REINSURANCE-->
+    </main>
+{% endblock %}

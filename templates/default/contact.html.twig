@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur la Nîmes'Alerie{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('stylesheets/default/contact.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <section class="title-img">
+        <div class="container">
+            <h1>- Contactez-nous -</h1>
+        </div>
+    </section>
+    <section class="py-5">
+        <div class="content">
+            <div class="contact">
+                <div class="other">
+                    <img src="{{ asset('images/cat.png') }}" alt="" >
+                </div>
+                <div class="form">
+                    <h1>Get In Touch</h1>
+                    <form action="">
+                        <div class="flex-rev"> <input type="text" placeholder="Connor Gaunt" name="name" id="name" /> <label for="name">Full Name</label> </div>
+                        <div class="flex-rev"> <input type="email" placeholder="connor@connorgaunt.com" name="email" id="email" /> <label for="email">Your Email</label> </div>
+                        <div class="flex-rev"> <textarea placeholder="I have an idea for a project...." name="message" id="message" /></textarea> <label for="message">Email Message</label> </div>
+                        <button>Send Email</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

@@ -3,17 +3,58 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>"/>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+        <!-- Links CSS-->
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('stylesheets/css/bootstrap.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('stylesheets/fontawesome/css/all.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('appli.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('stylesheets/cookies.css') }}"/>
+
         {% endblock %}
+        <!-- End Links CSS-->
+
+
+
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% include 'parts/header.html.twig' %}
+
+        {% block body %}
+        {% endblock %}
+
+    <!-- Div COOKIES-->
+    {% if app.request.cookies.get('accepted') != 1 %}
+    <div class="row">
+        <div class="col-md-4 col-sm-12 button-fixed">
+            <div class="p-3 pb-4 bg-custom text-white">
+                <div class="row">
+                    <div class="col-10">
+                        <img src="{{ asset ('/images/cat_cookies.png')}}">
+                        <h3>La Nîmes'alerie</h3>
+                    </div>
+                    <div class="col-2 text-center">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <p>La Nîmes'alerie utilise des cookies sur votre appareil pour améliorer la navigation sur le site, analyser son utilisation et contribuer à nos efforts de marketing.  <br>Vous pouvez accepter les cookies en cliquant sur « J’accepte ».
+                </p>
+                <a href="{{ path('cookie_authorize') }}">
+                    <button type="button" class="btn text-white w-100">J'accepte</button>
+                </a>
+            </div>
+        </div>
+    </div><!-- End Div COOKIES-->
+    {% endif %}
+    {% include 'parts/footer.html.twig' %}
     </body>
+    {% block javascripts %}
+
+        <script src="{{ asset('script/js/bootstrap.bundle.js') }}"></script>
+        <script src="{{ asset('script/appli.js') }}"></script>
+        <script src="{{ asset('stylesheets/fontawesome/js/all.js') }}"></script>
+
+    {% endblock %}
 </html>
